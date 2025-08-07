@@ -51,9 +51,10 @@ body {
 }
 
 /* cards*/
-.card{
+.listing-card{
     border: none !important;
     margin-bottom: 2rem;
+    color: #222222;
 
 }
 
