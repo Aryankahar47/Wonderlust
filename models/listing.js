@@ -22,19 +22,22 @@ const listingSchema = Schema({
 
     image:{
        
-//   type: String,
-//   default: "https://via.placeholder.com/300x200.png?text=No+Image"
-// },
 
-         filename: {
-            type: String,
-            default: "listingimage"
-    },
+
+        
     url: {
       type: String,
       default: "image to be inserted",
     },
+     filename: {
+            type: String,
+            default: "listingimage"
+    },
 },
+//   type: String,
+//   default: "https://via.placeholder.com/300x200.png?text=No+Image"
+// },
+
 //   type: String,
 //   default: "image to be inserted"
 // }
@@ -55,6 +58,10 @@ const listingSchema = Schema({
         type: Schema.Types.ObjectId,
         ref: "Review",
      }],
+     owner: {
+        type : Schema.Types.ObjectId,
+        ref: "User",
+     }
 
 })
 
