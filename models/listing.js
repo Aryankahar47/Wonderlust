@@ -22,17 +22,18 @@ const listingSchema = Schema({
 
     image:{
        
-
+         url: String,
+         filename: String,
 
         
-    url: {
-      type: String,
-      default: "image to be inserted",
-    },
-     filename: {
-            type: String,
-            default: "listingimage"
-    },
+    // url: {
+    //   type: String,
+    //   default: "image to be inserted",
+    // },
+    //  filename: {
+    //         type: String,
+    //         default: "listingimage"
+    // },
 },
 //   type: String,
 //   default: "https://via.placeholder.com/300x200.png?text=No+Image"
@@ -61,7 +62,18 @@ const listingSchema = Schema({
      owner: {
         type : Schema.Types.ObjectId,
         ref: "User",
-     }
+     },
+     geometry : {
+    type: {
+      type: String, // Don't do `{ location: { type: String } }`
+      enum: ['Point'], // 'location.type' must be 'Point'
+      required: true
+    },
+    coordinates: {
+      type: [Number],
+      required: true
+    }
+  }
 
 })
 
